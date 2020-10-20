@@ -13,8 +13,8 @@ class Cell extends React.Component{
   }
   render(){
     return (
-      <td>
-        <p>{this.state.documento.documents} doc.</p>
+      <td className="border px-4 py-2">
+        <p className="text-gray-600 text-sm mt-6">{this.state.documento.documents} doc.</p>
         <p>{this.state.documento.revenue} €</p>
       </td>
     );

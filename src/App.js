@@ -1,13 +1,12 @@
 import React from 'react';
-import Table from './components/Table.js'
+import AndamentoMensile from './components/AndamentoMensile.js'
 import './App.css';
 import './assets/main.css';
 
 function App() {
   return (
-    <div>
-      <h3>Andamento Mensile</h3>
-      <Table />
+    <div className="w-full flex content-center my-16 justify-center">
+      <AndamentoMensile />
     </div>
   );
 }
