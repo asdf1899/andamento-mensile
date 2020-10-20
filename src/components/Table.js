@@ -43,9 +43,7 @@ class Table extends React.Component{
   componentDidMount(){
     this.setState({tableData: this.filterData(this.props.data)});
   }
-  render(){
-    console.log(this.state.tableData);
-    
+  render(){    
     let tableHeader = this.state.tableData.map((month, i) => 
       <th key={i} className="pl-1 pr-6 py-2 text-gray-800 text-base font-normal">{month[0]}</th>
     );
