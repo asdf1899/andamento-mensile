@@ -25,8 +25,6 @@ class Table extends React.Component{
         }
       ])
     }
-    //console.log(mesi);
-    //console.log(data);
     let revenue = 0;
     for (let i = 0; i < data.length; i++){
       let currentDate = new Date(data[i].month);
@@ -38,7 +36,6 @@ class Table extends React.Component{
             mese[1] = data[i]
           }
         })
-        //console.log(mesi)
       }
     }
     this.setState({maxRevenue: revenue})
