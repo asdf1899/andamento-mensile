@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="https://anasaraid.me/hosting/andamento-mensile/img.png" alt="img" align="center" width="400px" />
+</div>
+
+
 1) Scaricare e scompattare il file *andamento-mensile-main.zip* oppure clonare il progetto con il comando *"git clone https://github.com/asdf1899/andamento-mensile.git"*
 2) Con il terminale entrare nella cartella *"andamento-mensile-main"*
 3) Eseguire il comando *"npm install"* (potrebbe metterci qualche minuto)
