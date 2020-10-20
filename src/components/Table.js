@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from '../components/Cell.js'
-import data from '../data.json'
 
 class Table extends React.Component{
   constructor(props){
@@ -8,7 +7,7 @@ class Table extends React.Component{
     this.month = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     this.state = {
       tableData: [],
-      maxRevenue: 0
+      maxRevenue: 0,
     }
   }
   isValidDate(d) {
@@ -42,7 +41,7 @@ class Table extends React.Component{
     return mesi;
   }
   componentDidMount(){
-    this.setState({tableData: this.filterData(data)})
+    this.setState({tableData: this.filterData(this.props.data)});
   }
   render(){
     console.log(this.state.tableData);
