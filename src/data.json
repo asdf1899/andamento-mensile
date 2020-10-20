@@ -1,0 +1,62 @@
+[
+  {
+    "documents": 4,
+    "revenue": 15000,
+    "month": "2019/01"
+  },
+  {
+    "documents": 4,
+    "revenue": 22341,
+    "month": "2019/02"
+  },
+  {
+    "documents": 5,
+    "revenue": 32000,
+    "month": "2019/03"
+  },
+  {
+    "documents": 1,
+    "revenue": 900,
+    "month": "2019/04"
+  },
+  {
+    "documents": 2,
+    "revenue": 29000,
+    "month": "2019/05"
+  },
+  {
+    "documents": 1,
+    "revenue": 28000,
+    "month": "2019/06"
+  },
+  {
+    "documents": 2,
+    "revenue": 28000,
+    "month": "2019/07"
+  },
+  {
+    "documents": 1,
+    "revenue": 12000,
+    "month": "2019/08"
+  },
+  {
+    "documents": 0,
+    "revenue": 0,
+    "month": "2019/09"
+  },
+  {
+    "documents": 3,
+    "revenue": 32000,
+    "month": "2019/010"
+  },
+  {
+    "documents": 3,
+    "revenue": 32000,
+    "month": "2019/11"
+  },
+  {
+    "documents": 2,
+    "revenue": 28000,
+    "month": "2019/12"
+  }
+]
