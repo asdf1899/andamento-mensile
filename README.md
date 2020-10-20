@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://anasaraid.me/hosting/andamento-mensile/img.png" alt="img" align="center" width="400px" />
+  <img src="https://anasaraid.me/hosting/andamento-mensile/img.png" alt="img" align="center" width="80%" />
 </div>
 
 
