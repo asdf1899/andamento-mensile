@@ -51,16 +51,16 @@ class Table extends React.Component{
     console.log(this.state.tableData);
     
     let tableHeader = this.state.tableData.map((month, i) => 
-      <th key={i} className="px-2 py-2 text-left text-gray-800 text-base font-normal">{month[0]}</th>
+      <th key={i} className="pl-1 pr-6 py-2 text-gray-800 text-base font-normal">{month[0]}</th>
     );
     let tableCell = this.state.tableData.map((month, i) => 
-      <Cell key={i} className="text-blue-500 text-sm" data={month[1]} maxRevenue={this.state.maxRevenue} />
+      <Cell key={i} className="text-blue-500 text-left text-sm" data={month[1]} maxRevenue={this.state.maxRevenue} />
     );
     return (
-      <div>
+      <div className="py-4 px-2 w-full" style={{'overflowX': 'auto'}}>
         <table className="table-fixed">
-          <thead>
-            <tr>
+          <thead className="p-0 m-0">
+            <tr className="text-left">
               {tableHeader}
             </tr>
           </thead>
