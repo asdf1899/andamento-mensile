@@ -15,35 +15,38 @@ class Table extends React.Component{
   }
   filterData(data){
     let mesi = [];
-    for (let j = 0; j < this.month.length; j++){
-      mesi.push([
-        this.month[j], {
-          'documents': 0,
-          'revenue': 0,
-          'month': 0
-        }
-      ])
-    }
     let revenue = 0;
-    for (let i = 0; i < data.length; i++){
-      let currentDate = new Date(data[i].month);
-      if (this.isValidDate(currentDate)){
-        let currentMonth = this.month[currentDate.getMonth()];
-        revenue = (data[i].revenue >= revenue) ? data[i].revenue : revenue; 
-        mesi.map((mese) => {
-          if (mese[0] === currentMonth){
-            mese[1] = data[i]
+    // scorro l'array coi mesi
+    this.month.forEach((currentMonth, monthIndex)=>{
+      let documents = {documents: 0, revenue: 0, month: 0};
+      // currentMonth contiene il mese iniziale es. "Gennaio", "Febbraio" ecc.
+      for (let i=0; i< data.length; i++){
+        // currentData es. "{"documents": 2,"revenue": 29000, "month": "2019/05"}"
+        let currentData = data[i];
+        // newDate è l'istanza Date di currentData
+        let newDate = new Date(currentData.month);
+        // controllo se la data è valida
+        if (this.isValidDate(newDate)){
+          // getMonth restituisce l'index della data
+          let newDateMonthIndex = newDate.getMonth();
+          // se l'index del mese attuale (index di "Gennaio") è uguale all'index di currentData
+          // allora controllo se ha il fatturato maggiore degli altri ed assegno a documents currentData
+          if (monthIndex === newDateMonthIndex){
+            revenue = (currentData.revenue >= revenue) ? data[monthIndex].revenue : revenue; 
+            documents = currentData;
+            break;
           }
-        })
+        }
       }
-    }
+      mesi.push([currentMonth, documents]);
+    });
     this.setState({maxRevenue: revenue})
     return mesi;
   }
   componentDidMount(){
     this.setState({tableData: this.filterData(this.props.data)});
   }
-  render(){    
+  render(){
     let tableHeader = this.state.tableData.map((month, i) => 
       <th key={i} className="pl-1 pr-6 py-2 text-gray-800 text-base font-normal">{month[0]}</th>
     );
