@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Cell from '../components/Cell.js'
 
 class Table extends React.Component{
@@ -23,12 +24,18 @@ class Table extends React.Component{
       for (let i=0; i< data.length; i++){
         // currentData es. "{"documents": 2,"revenue": 29000, "month": "2019/05"}"
         let currentData = data[i];
-        // newDate è l'istanza Date di currentData
-        let newDate = new Date(currentData.month);
+        // divido la string in anno e mese
+        let splitMonth = currentData.month.split('/');
+        // con parseInt toglie i leading 0 es. 010 
+        let year = parseInt(splitMonth[0]);
+        let month = parseInt(splitMonth[1]);
+        // se il mese è minore di 10, moment richiede che i mesi inferiori a 10 abbiano lo 0 davanti es. 09
+        month = (month < 10) ? '0'+month : month;
+        let newDate = moment(year+ '-' + month, "YYYY-MM", true);
         // controllo se la data è valida
-        if (this.isValidDate(newDate)){
-          // getMonth restituisce l'index della data
-          let newDateMonthIndex = newDate.getMonth();
+        if (newDate.isValid()){
+          // month restituisce l'index month della data (0-11)
+          let newDateMonthIndex = newDate.month();
           // se l'index del mese attuale (index di "Gennaio") è uguale all'index di currentData
           // allora controllo se ha il fatturato maggiore degli altri ed assegno a documents currentData
           if (monthIndex === newDateMonthIndex){
